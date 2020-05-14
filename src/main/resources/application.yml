@@ -1,0 +1,12 @@
+#jms.username=jms-user
+#jms.password=jms-pwd
+#jms.url=jms-url
+jms:
+  username: jms-user
+  password: jms-pwd
+  url: jms_url_from_application_yml
+
+spring:
+  profiles: EN
+db:
+  username: vipin_EN_XXX
