@@ -1,6 +1,7 @@
 package com.vipin.springdi;
 
 import com.vipin.springdi.controllers.*;
+import com.vipin.springdi.exampleBeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -34,6 +35,11 @@ public class SpringDiApplication {
 		ConstructorInjectedController constructorInjectedController =
 				(ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("----------FakeDataSource");
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean("fakeDataSource");
+		System.out.println(fakeDataSource.getUsername() + "\t" +
+				fakeDataSource.getPassword() + "\t" + fakeDataSource.getUrl());
 	}
 
 }
