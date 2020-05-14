@@ -2,6 +2,7 @@ package com.vipin.springdi;
 
 import com.vipin.springdi.controllers.*;
 import com.vipin.springdi.exampleBeans.FakeDataSource;
+import com.vipin.springdi.exampleBeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -40,6 +41,11 @@ public class SpringDiApplication {
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean("fakeDataSource");
 		System.out.println(fakeDataSource.getUsername() + "\t" +
 				fakeDataSource.getPassword() + "\t" + fakeDataSource.getUrl());
+
+		System.out.println("----------FakeJmsBroker");
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean("fakeJmsBroker");
+		System.out.println(fakeJmsBroker.getUsername() + "\t"  +
+				fakeJmsBroker.getPassword() + "\t" + fakeJmsBroker.getUrl());
 	}
 
 }
